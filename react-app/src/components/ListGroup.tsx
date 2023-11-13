@@ -1,6 +1,8 @@
 function ListGroup() {
-  //array
-  const items = ["New York", "San Diago", "Dubi", "Tokyo"];
+  //array /note let is a varable and can be reassigned  ,const is a constant , duhhhh lmao
+  let items = ["New York", "San Diago", "Dubi", "Tokyo"];
+  items = [];
+  if (items.length === 0) return <p>No item found </p>;
   //array has a method to map items of a difrent type.
   //convert each item to an li elenent dynamicly
   items.map((item) => <li>{item}</li>);
@@ -12,7 +14,9 @@ function ListGroup() {
 
       <ul className="list-group">
         {items.map((item) => (
-          <li> {item}</li>
+          // react needs key property to identify each item. for the instant we can use "item" itself
+          // when using an API or real world aplication each item has a propety key like "id" so example (item.id)
+          <li key={item}> {item}</li>
         ))}
       </ul>
     </>
