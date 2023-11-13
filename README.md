@@ -1,3 +1,3 @@
 # react-web-test
-## project not finished
+NOTE : project not finished
 building a react porject using typescript
