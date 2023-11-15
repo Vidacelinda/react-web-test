@@ -7,9 +7,11 @@ import { useState } from "react";
 interface ListGroupProps{
     items:string[];
     heading:string;
+    //item:string => void
+    onSelectItem:(item:string)=>void; 
 }
 
-function ListGroup({items,heading}:ListGroupProps) {
+function ListGroup({items,heading,onSelectItem}:ListGroupProps) {
 
 
   // Hook
@@ -33,7 +35,8 @@ function ListGroup({items,heading}:ListGroupProps) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
-              console.log(item);
+              onSelectItem(item);
+              // console.log(item);
             }}
           >
             {item}
