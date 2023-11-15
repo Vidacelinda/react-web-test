@@ -1,9 +1,14 @@
-import React from 'react'
 
-const alert = () => {
+interface Props{
+  //text prop :string
+  text:string;
+
+}
+
+const Alert = ({text} :Props) => {
   return (
-    <div>alert</div>
+    <div className="alert alert-primary" >{text}</div>
   )
 }
 
-export default alert
+export default Alert
