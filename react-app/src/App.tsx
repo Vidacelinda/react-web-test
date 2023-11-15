@@ -3,9 +3,14 @@ import ListGroup from "./components/ListGroup";
 //have the message compnnent in here too
 
 //component
-function App(){
+function App() {
   // return <div><Message/></div>
-  return <div><ListGroup/></div>
+  let items = ["New York", "San Diago", "Dubi", "Tokyo"];
+  return (
+    <div>
+      <ListGroup items={items} heading="Cities"/>
+    </div>
+  );
 }
 //export App compnet so it could be used somewhere else
 export default App;
