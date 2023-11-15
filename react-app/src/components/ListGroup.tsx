@@ -1,10 +1,14 @@
-import { MouseEvent } from "react";
-function ListGroup() {
-  //array /note let is a varable and can be reassigned  ,const is a constant , duhhhh lmao
-  let items = ["New York", "San Diago", "Dubi", "Tokyo"];
-  const handleClick =(event:MouseEvent) =>console.log(event)
-  //JSX markup
+//itme 
 
+import { useState } from "react";
+
+function ListGroup() {
+  let items = ["New York", "San Diago", "Dubi", "Tokyo"];
+  //   let selectedIndex =0;
+  // Hook
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  //JSX markup
   return (
     <>
       <h1>List</h1>
@@ -14,11 +18,18 @@ function ListGroup() {
           // react needs key property to identify each item. for the instant we can use "item" itself
           // when using an API or real world aplication each item has a propety key like "id" so example (item.id)
           <li
-            className="list-group-item active"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={handleClick}
+            onClick={() => {
+              setSelectedIndex(index);
+              console.log(item);
+            }}
           >
-            {item} 
+            {item}
           </li>
         ))}
       </ul>
