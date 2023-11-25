@@ -9,7 +9,7 @@ function App() {
   const[alertVisable,setAlertVisiblity]= useState(false);
   return (
     <div>
-      {/* <Alert>
+      {/*<Alert>
         Hello <span></span>world
       </Alert> */}
       {alertVisable && <Alert onClose={()=>setAlertVisiblity(false)}> My alert</Alert>}
